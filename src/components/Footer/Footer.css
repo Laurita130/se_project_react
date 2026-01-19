@@ -1,0 +1,10 @@
+.footer {
+  height: 20px;
+  top: 1040px;
+  padding: 8px 16px 8px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__author {
+  left: 40px;
+}

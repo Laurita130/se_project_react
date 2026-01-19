@@ -17,13 +17,20 @@
 
 .modal__title {
   margin: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 1);
 }
 
 .modal__close {
   position: absolute;
   top: 20px;
   right: 28px;
-  background-color: #efefef;
+
 }
 
 .modal__content {
@@ -41,6 +48,21 @@
 }
 .modal__input {
   display: block;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  width: 440px;
+  top: 364px;
+  left: 500px;
+  align-items: center;
+  height: 29px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
 }
 
 .modal__radio-buttons {
@@ -48,4 +70,45 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+}
+
+.modal__label {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 8px;
+}
+
+.modal__legend {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 8px;
+}
+
+.modal__submit {
+  margin-top: 24px;
+  padding: 8px 16px 8px 16px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 1);
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  border-radius: 4px;
+  gap: 8px;
+  flex-flow: horizontal nowrap;
+  width: 150px;
+  height: 36px;
+  border-radius: 4px;
 }
