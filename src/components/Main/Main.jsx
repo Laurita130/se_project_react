@@ -3,7 +3,7 @@ import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard.jsx";
 import { defaultClothingItems } from "../../utils/constants.js";
 
-function Main({ weatherData, handleaCardClick }) {
+function Main({ weatherData, handleCardClick }) {
   return (
     <main>
       <WeatherCard weatherData={weatherData} />
@@ -21,7 +21,7 @@ function Main({ weatherData, handleaCardClick }) {
                 <ItemCard
                   key={item._id}
                   item={item}
-                  onCardClick={handleaCardClick}
+                  onCardClick={handleCardClick}
                 />
               );
             })}
