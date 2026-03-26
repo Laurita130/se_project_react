@@ -38,6 +38,7 @@
   max-width: 496px;
   box-sizing: border-box;
   width: 100%;
+  border-radius: 20px;
 }
 
 .modal__form {
@@ -63,6 +64,7 @@
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0%;
+  margin-bottom: 24px;
 }
 
 .modal__radio-buttons {
