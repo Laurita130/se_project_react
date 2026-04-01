@@ -5,7 +5,7 @@ export default function ClothesSection({ handleCardClick, clothingItems }) {
   return (
     <div className="clothes-section">
       <div className="close-section__row">
-        <p>Text</p>
+        <p>Your Item</p>
         <button>Button</button>
       </div>
       <ul className="clothes-section__list" >

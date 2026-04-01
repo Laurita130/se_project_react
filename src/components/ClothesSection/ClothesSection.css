@@ -1,5 +1,7 @@
 .clothes-section{
     flex-grow: 1;
+    left: 358px;
+   
 }
 .clothes-section__row {
   display: flex;

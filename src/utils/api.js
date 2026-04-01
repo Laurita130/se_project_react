@@ -8,20 +8,24 @@ export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
-export function request(url, options) {
-  return fetch(url, options).then(handleServerResponse);
-}
+export const getItems = () =>
+  fetch(`${baseUrl}/items`, { headers }).then(handleServerResponse);
 
- const getItems = () => {
-  return request(`${baseUrl}/items`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+export const addItem = ({ name, imageUrl, weather }) => {
+  return fetch(`${baseUrl}/items`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({
+      name,
+      imageUrl,
+      weather,
+    }),
+  }).then(handleServerResponse);
 };
 
-const api={
-getItems,
-
+export const deleteItemHandler = (itemId) => {
+  return fetch(`${baseUrl}/items/${itemId}`, {
+    method: "DELETE",
+    headers,
+  }).then(handleServerResponse);
 };
-export default api;
