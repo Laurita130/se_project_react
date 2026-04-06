@@ -15,17 +15,19 @@ function ItemModal({ isOpen, onClose, card, openDeleteConfirmation }) {
           alt={card.name}
           className="item-modal__image"
         />
+
         <div className="item-modal__footer">
           <button
             type="button"
-            className="item-modal__delete-button"
+            className="item-modal__delete-button   "
             onClick={() => openDeleteConfirmation(card._id)}
           >
             Delete
           </button>
-          <h2 className="item-modal__caption">{card.name}</h2>
-          <h3 className="item-modal__caption">{card.weather}</h3>
-          <p className="item-modal__weather">Weather: {card.weather}</p>
+          <div className="item-modal__divider">
+            <h2 className="item-modal__caption">{card.name}</h2>
+            <p className="item-modal__weather">Weather: {card.weather}</p>
+          </div>
         </div>
       </div>
     </div>

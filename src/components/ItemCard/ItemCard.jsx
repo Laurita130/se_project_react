@@ -1,4 +1,5 @@
 import "./ItemCard.css";
+import { deleteItemHandler } from "../../utils/api.js";
 
 function ItemCard({ item, onCardClick }) {
   const handleCardClick = () => {
@@ -18,7 +19,6 @@ function ItemCard({ item, onCardClick }) {
       <h2 className="card__name">{item.name}</h2>
       <img
         onClick={handleCardClick}
-        onDoubleClick={handleDeleteClick}
         className="card__image"
         src={item.imageUrl}
         alt={item.name}

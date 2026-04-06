@@ -1,6 +1,6 @@
 .item-modal__content {
   width: 498px;
-  height: 610px;
+  min-height: 610px;
   border-radius: 16px;
   margin-top: 106px;
   padding: 0;
@@ -8,6 +8,7 @@
 
 .item-modal__image {
   width: 498px;
+  height: 498px;
 }
 
 .item-modal__caption {
@@ -28,6 +29,29 @@
   opacity: 0.7;
 }
 
-.item-modal__delete-button{
+.item-modal__delete-button {
   color: rgb(255, 77, 0);
+}
+
+.item-modal__cancel-button {
+  color: rgb(0, 0, 0);
+}
+
+.item-modal__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  padding: 20px;
+}
+
+.item-modal__divider {
+  size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  font-family:
+    Cabinet Grotesk,
+    sans-serif;
+  font-weight: 700;
+  font-size: 20px;
 }

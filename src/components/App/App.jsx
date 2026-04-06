@@ -27,6 +27,8 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [deleteItemId, setDeleteItemId] = useState(null);
 
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
   };
@@ -53,10 +55,12 @@ function App() {
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
+    setIsAddModalOpen(true);
   };
 
   const closeAllModals = () => {
     setActiveModal("");
+    setIsAddModalOpen(false);
   };
 
   useEffect(() => {
@@ -120,11 +124,17 @@ function App() {
                 <Profile
                   handleCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                  onAddItemClick={handleAddClick}
                 />
               }
             />
           </Routes>
 
+          <AddItemModal
+            isOpen={isAddModalOpen}
+            onClose={() => setIsAddModalOpen(false)}
+            onAddItem={onAddItem}
+          />
           <Footer />
         </div>
 
