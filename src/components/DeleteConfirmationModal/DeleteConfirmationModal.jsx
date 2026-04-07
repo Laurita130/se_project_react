@@ -1,6 +1,6 @@
 import "../ItemModal/ItemModal.css";
 import "../ModalWithForm/ModalWithForm.css";
-
+import "../DeleteConfirmationModal.css"
 import close from "../../assets/close.png";
 
 function DeleteConfirmationModal({ isOpen, onClose, deleteHandler }) {
