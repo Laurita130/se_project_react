@@ -1,7 +1,9 @@
 import "../ItemModal/ItemModal.css";
 import "../ModalWithForm/ModalWithForm.css";
-import "../DeleteConfirmationModal.css"
+import "./DeleteConfirmation.css";
 import close from "../../assets/close.png";
+
+// ../
 
 function DeleteConfirmationModal({ isOpen, onClose, deleteHandler }) {
   return (
@@ -10,7 +12,7 @@ function DeleteConfirmationModal({ isOpen, onClose, deleteHandler }) {
         <button type="button" className="modal__close" onClick={onClose}>
           <img src={close} alt="Close icon" />
         </button>
-<div className="modal__delete-message">
+        <div className="modal__delete-message">
           <p>Are you sure you want to delete this item?</p>
         </div>
 
@@ -23,7 +25,11 @@ function DeleteConfirmationModal({ isOpen, onClose, deleteHandler }) {
             Delete
           </button>
 
-          <button type="button" className="item-modal__cancel-button" onClick={onClose}>
+          <button
+            type="button"
+            className="item-modal__cancel-button"
+            onClick={onClose}
+          >
             Cancel
           </button>
         </div>

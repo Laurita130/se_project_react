@@ -1,5 +1,4 @@
 .footer {
-
   margin-left: 40px;
   display: flex;
   justify-content: space-between;
@@ -15,4 +14,11 @@
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 500;
   font-size: medium;
+}
+
+.footer__year {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: medium;
+  margin-left: 1000px;
 }
