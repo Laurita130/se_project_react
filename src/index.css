@@ -1,6 +1,2 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts/fonts.css);
-@import url(./DeleteConfirmationModal/DeleteConfirmation.css);
-@import url(./ItemModal/ItemModal.css);
-@import url(./ModalWithForm/ModalWithForm.css);
-@import url(./main.css);
