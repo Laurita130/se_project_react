@@ -4,25 +4,28 @@
   border-radius: 16px;
   margin-top: 106px;
   padding: 0;
+  overflow: hidden;
 }
 
 .item-modal__image {
   width: 498px;
   height: 498px;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .item-modal__caption {
-  padding-left: 8px;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0%;
+  margin: 0 0 12px 0;
 }
 
 .item-modal__weather {
-  padding-left: 8px;
   font-family: "Cabinet Grotesk", sans-serif;
+  margin: 0;
 }
 
 .item-modal__close--white:hover:after {
@@ -30,7 +33,13 @@
 }
 
 .item-modal__delete-button {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
   color: rgb(255, 77, 0);
+  margin-left: 150px;
+  letter-spacing: 0%;
 }
 
 .item-modal__cancel-button {
@@ -42,7 +51,7 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row-reverse;
-  padding: 20px;
+  padding: 20px 32px;
 }
 
 .item-modal__divider {

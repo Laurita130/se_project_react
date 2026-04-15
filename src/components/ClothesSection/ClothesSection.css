@@ -28,14 +28,15 @@
   letter-spacing: 0%;
   width: 94px;
   border-radius: 8px 16px;
-
+  margin-top: 0;
   margin-left: 40px;
-  margin-bottom: 5px;
 }
 .clothes-section__display-item {
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: bold;
   margin-left: 20px;
-  margin-top: 15px;
-  color:rgba(0, 0, 0, 0.6) ;
+color: rgba(0, 0, 0, 0.6);
+  margin-top: 0;
+  font-size: 20px;
+  padding: 0;
 }

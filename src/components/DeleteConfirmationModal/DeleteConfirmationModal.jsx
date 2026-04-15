@@ -13,18 +13,18 @@ function DeleteConfirmationModal({ isOpen, onClose, deleteHandler }) {
           <img src={close} alt="Close icon" />
         </button>
         <div className="modal__delete-message">
-          <p>Are you sure you want to delete this item?</p>
+          Are you sure you want to delete this item? <p className="modal__delete-warning">This action is irreversible.</p>
         </div>
-
         <div className="modal__delete-footer">
           <button
             type="button"
             className="item-modal__delete-button item-modal__delete-button_confirmation"
             onClick={deleteHandler}
           >
-            Delete
+               Yes, Delete Item
           </button>
-
+</div>
+<div>
           <button
             type="button"
             className="item-modal__cancel-button"
