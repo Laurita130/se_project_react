@@ -42,14 +42,14 @@
 }
 
 .modal__content_delete {
-  width: 670px;
-  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 670px;
   border-radius: 20px;
-  padding: 8px 16px;
-  margin: 271px;
-  border: 1px rgba(255, 255, 255, 1);
+  padding: 60px 0;
 }
-
 
 .modal__form {
   display: flex;
