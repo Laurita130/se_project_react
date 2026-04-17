@@ -11,6 +11,4 @@ Currently, two official plugins are available:
 
 Hi, I am Laura Lysaght, and I’m sharing my Sprint 11 project. 
 
-<video controls src="LauraLysaght-ProjectPitch-SpotsStage12.mp4" title="Title"></video>
-
 https://www.loom.com/share/17da177324df49a7b94807dcb27be60e
