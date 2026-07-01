@@ -7,25 +7,26 @@
   overflow: hidden;
 }
 
-.item-modal__image {
-  width: 498px;
+.modal__image {
+  width: 100%;
   height: 498px;
-  max-width: 100%;
   object-fit: cover;
+  border-radius: 16px 16px 0 0;
 }
 
 .item-modal__caption {
+  margin: 0;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  letter-spacing: 0%;
-  margin: 0 0 12px 0;
 }
-
 .item-modal__weather {
-  font-family: "Cabinet Grotesk", sans-serif;
   margin: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .item-modal__close--white:hover:after {
@@ -33,12 +34,17 @@
 }
 
 .item-modal__delete-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+
   font-family: "Cabinet Grotesk", sans-serif;
-  font-weight: 700;
   font-size: 20px;
+  font-weight: 700;
   line-height: 24px;
-  color: rgb(255, 77, 0);
-  letter-spacing: 0%;
+
+  color: #ff4d00;
+  cursor: pointer;
 }
 
 .item-modal__cancel-button {
@@ -49,11 +55,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-direction: row-reverse;
-  padding: 20px 32px;
+  padding: 16px 24px;
+  min-height: 112px;
+  box-sizing: border-box;
 }
 
-.item-modal__divider {
+.item-modal__info {
   size: 20px;
   line-height: 24px;
   letter-spacing: 0%;
@@ -62,4 +69,7 @@
     sans-serif;
   font-weight: 700;
   font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }

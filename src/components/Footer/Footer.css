@@ -1,5 +1,6 @@
 .footer {
   margin-left: 40px;
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
   font-size: 16px;
@@ -19,5 +20,4 @@
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 500;
   font-size: medium;
-
 }
