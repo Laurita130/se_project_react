@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
-import { APIkey } from "../../utils/constants";
+import { apiKey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import AddItemModal from "../AddItemModal/AddItemModal";
@@ -41,8 +41,7 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [deleteItemId, setDeleteItemId] = useState(null);
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-  const token = localStorage.getItem("jwt");
+
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -54,6 +53,7 @@ function App() {
   };
 
   const onAddItem = (inputValues) => {
+    const token = localStorage.getItem("jwt");
     const newCardData = {
       name: inputValues.name,
       imageUrl: inputValues.imageUrl,
@@ -68,10 +68,9 @@ function App() {
       .catch(console.error);
   };
 
-  const closeAllModals = () => {
-    setActiveModal("");
-    setIsAddModalOpen(false);
-  };
+ const closeAllModals = () => {
+  setActiveModal("");
+};
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
@@ -86,6 +85,7 @@ function App() {
   };
 
   const handleRegister = ({ name, avatar, email, password }) => {
+    const token = localStorage.getItem("jwt");
     signup({ name, avatar, email, password })
       .then(() => {
         return signin({ email, password });
@@ -99,6 +99,7 @@ function App() {
   };
 
   const handleLogin = ({ email, password }) => {
+    const token = localStorage.getItem("jwt");
     signin({ email, password })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
@@ -173,6 +174,7 @@ function App() {
   };
 
   const handleDeleteItem = () => {
+    const token = localStorage.getItem("jwt");
     deleteItemHandler(deleteItemId, token)
       .then(() => {
         setClothingItems(
@@ -187,6 +189,7 @@ function App() {
     setActiveModal("edit-profile");
   };
   const handleUpdateUser = ({ name, avatar }) => {
+    const token = localStorage.getItem("jwt");
     updateUser({ name, avatar }, token)
       .then((updatedUser) => {
         setCurrentUser(updatedUser);
@@ -195,11 +198,14 @@ function App() {
       .catch(console.error);
   };
   const handleLogout = () => {
+    const token = localStorage.getItem("jwt");
     localStorage.removeItem("jwt");
     setCurrentUser({});
     setIsLoggedIn(false);
     closeAllModals();
   };
+
+
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
