@@ -136,7 +136,7 @@ function App() {
         latitude: 26.715364,
         longitude: -80.0532942,
       },
-      APIkey,
+      apiKey,
     )
       .then((data) => {
         setWeatherData(filterWeatherData(data));
