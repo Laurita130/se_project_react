@@ -34,7 +34,7 @@
 .modal__content {
   background-color: #fff;
   position: relative;
-  padding: 0;
+  padding: 20px;
   max-width: 498px;
   width: 100%;
   border-radius: 16px;

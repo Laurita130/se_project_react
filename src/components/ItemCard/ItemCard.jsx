@@ -1,5 +1,4 @@
 import "./ItemCard.css";
-import { deleteItemHandler } from "../../utils/api.js";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
@@ -17,13 +16,6 @@ function ItemCard({ item, onCardClick, onCardLike }) {
     onCardClick(item);
   };
 
-  const handleDeleteClick = () => {
-    deleteItemHandler(item._id)
-      .then(() => {
-        onCardClick(null);
-      })
-      .catch(console.error);
-  };
 
   const handleLike = () => {
     onCardLike({

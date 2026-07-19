@@ -24,8 +24,10 @@ import LoginModal from "../LoginModal/LoginModal";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { signup, signin, checkToken } from "../../utils/auth";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
+  const navigate = useNavigate();
   const [weatherData, setWeatherData] = useState({
     type: "",
     temp: { F: 999, C: 999 },
@@ -41,7 +43,6 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [deleteItemId, setDeleteItemId] = useState(null);
-
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -62,15 +63,15 @@ function App() {
 
     addItem(newCardData, token)
       .then((data) => {
-        setClothingItems([data, ...clothingItems]);
+        setClothingItems([data.data, ...clothingItems]);
         closeAllModals();
       })
       .catch(console.error);
   };
 
- const closeAllModals = () => {
-  setActiveModal("");
-};
+  const closeAllModals = () => {
+    setActiveModal("");
+  };
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
@@ -85,21 +86,14 @@ function App() {
   };
 
   const handleRegister = ({ name, avatar, email, password }) => {
-    const token = localStorage.getItem("jwt");
     signup({ name, avatar, email, password })
       .then(() => {
-        return signin({ email, password });
-      })
-      .then((res) => {
-        localStorage.setItem("jwt", res.token);
-        setIsLoggedIn(true);
-        closeAllModals();
+        return handleLogin({ email, password });
       })
       .catch(console.error);
   };
 
   const handleLogin = ({ email, password }) => {
-    const token = localStorage.getItem("jwt");
     signin({ email, password })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
@@ -109,6 +103,7 @@ function App() {
       .then((user) => {
         setCurrentUser(user);
         closeAllModals();
+        navigate("/");
       })
       .catch(console.error);
   };
@@ -198,14 +193,12 @@ function App() {
       .catch(console.error);
   };
   const handleLogout = () => {
-    const token = localStorage.getItem("jwt");
     localStorage.removeItem("jwt");
     setCurrentUser({});
     setIsLoggedIn(false);
     closeAllModals();
+    navigate("/");
   };
-
-
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -238,14 +231,16 @@ function App() {
               <Route
                 path="/profile"
                 element={
-                  <Profile
-                    handleCardClick={handleCardClick}
-                    clothingItems={clothingItems}
-                    onAddItemClick={handleAddClick}
-                    onCardLike={handleCardLike}
-                    onEditProfileClick={handleEditProfileClick}
-                    onLogout={handleLogout}
-                  />
+                  <ProtectedRoute isLoggedIn={isLoggedIn}>
+                    <Profile
+                      handleCardClick={handleCardClick}
+                      clothingItems={clothingItems}
+                      onAddItemClick={handleAddClick}
+                      onCardLike={handleCardLike}
+                      onEditProfileClick={handleEditProfileClick}
+                      onLogout={handleLogout}
+                    />
+                  </ProtectedRoute>
                 }
               />
             </Routes>

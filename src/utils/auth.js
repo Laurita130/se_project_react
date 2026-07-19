@@ -1,11 +1,7 @@
+import { handleServerResponse } from "./api";
 const baseUrl = "http://localhost:3001";
 
-const handleResponse = (res) => {
-  if (!res.ok) {
-    return Promise.reject(`Error: ${res.status}`);
-  }
-  return res.json();
-};
+
 
 export const signup = ({ name, avatar, email, password }) => {
   return fetch(`${baseUrl}/signup`, {
@@ -19,7 +15,7 @@ export const signup = ({ name, avatar, email, password }) => {
       email,
       password,
     }),
-  }).then(handleResponse);
+  }).then(handleServerResponse);
 };
 
 export const signin = ({ email, password }) => {
@@ -32,7 +28,7 @@ export const signin = ({ email, password }) => {
       email,
       password,
     }),
-  }).then(handleResponse);
+  }).then(handleServerResponse);
 };
 
 export const checkToken = (token) => {
@@ -42,5 +38,5 @@ export const checkToken = (token) => {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-  }).then(handleResponse);
+  }).then(handleServerResponse);
 };
